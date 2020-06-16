@@ -154,19 +154,19 @@ snippet head "File Header" b
 /******************************************************************************
 * File:             `!p snip.rv = fn`
 *
-* Author:           ${2}  
-* Created:          `date +%m/%d/%y` 
+* Author:           ${2}
+* Created:          `date +%m/%d/%y`
 * Description:      ${4:${VISUAL}}
 *****************************************************************************/
 ${0}
 endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet func "Function Header" 
+snippet func "Function Header"
 /******************************************************************************
 * Function:         $1
 * Description:      ${4:${VISUAL}}
-* Where:`!p 
+* Where:`!p
 snip.rv = ""
 snip >> 2
 
@@ -184,3 +184,20 @@ ${1}($2){
 }
 endsnippet
 # vim:ft=snippets:
+
+snippet mu "miniunit" b
+MU_TEST($1) {
+    mu_assert($2,"$3");
+}
+endsnippet
+
+snippet mus "miniunit suite" b
+MU_TEST_SUITE(test_suite) {
+    MU_RUN_TEST($1);
+}
+endsnippet
+
+snippet mur "run miniunit" b
+MU_RUN_SUITE($1);
+MU_REPORT();
+endsnippet
