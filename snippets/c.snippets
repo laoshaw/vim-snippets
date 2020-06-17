@@ -18,9 +18,11 @@ snippet mainn
 # #include <...>
 snippet inc
 	#include <${1:stdio}.h>
+
 # #include "..."
 snippet Inc
 	#include "${1:`vim_snippets#Filename("$1.h")`}"
+
 # ifndef...define...endif
 snippet ndef
 	#ifndef $1
