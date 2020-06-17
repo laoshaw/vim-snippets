@@ -148,19 +148,19 @@ ${1}($2){
 endsnippet
 # vim:ft=snippets:
 
-snippet mu "miniunit" b
-MU_TEST($1) {
-    mu_assert($2,"$3");
+snippet mu "minunit" b
+MU_TEST(test_$1) {
+    mu_assert($2,"${3:assert failed at __func__, __FILE__:__LINE__}");
 }
 endsnippet
 
-snippet mus "miniunit suite" b
-MU_TEST_SUITE(test_suite) {
-    MU_RUN_TEST($1);
+snippet mus "minunit suite" b
+MU_TEST_SUITE(${1:test_suite}) {
+    MU_RUN_TEST(test_$2);
 }
 endsnippet
 
-snippet mur "run miniunit" b
-MU_RUN_SUITE($1);
+snippet mur "run minunit" b
+MU_RUN_SUITE(${1:test_suite});
 MU_REPORT();
 endsnippet
