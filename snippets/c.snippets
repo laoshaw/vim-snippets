@@ -41,9 +41,8 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
-
-	#define $1
+	#ifndef ${1:`toupper(vim_snippets#Filename('_$1_H', 'UNTITLED_H'))`}
+	#define $1 1
 
 	${0}
 
