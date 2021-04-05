@@ -14,65 +14,65 @@ snippet array
 	std::array<${1:T}, ${2:N}> ${3:M};
 # std::vector
 snippet vector
-	std::vector<${1:T}> ${2};
+	std::vector<${1:T}> ${2:N};
 # std::deque
 snippet deque
-	std::deque<${1:T}> ${2};
+	std::deque<${1:T}> ${2:V};
 # std::forward_list
 snippet flist
-	std::forward_list<${1:T}> ${2};
+	std::forward_list<${1:T}> ${2:V};
 # std::list
 snippet list
-	std::list<${1:T}> ${2};
+	std::list<${1:T}> ${2:V};
 # std::set
 snippet set
-	std::set<${1:T}> ${2};
+	std::set<${1:T}> ${2:V};
 # std::map
 snippet map
-	std::map<${1:Key}, ${2:T}> ${3};
+	std::map<${1:Key}, ${2:T}> ${3:N};
 # std::multiset
 snippet mset
-	std::multiset<${1:T}> ${2};
+	std::multiset<${1:T}> ${2:V};
 # std::multimap
 snippet mmap
-	std::multimap<${1:Key}, ${2:T}> ${3};
+	std::multimap<${1:Key}, ${2:T}> ${3:N};
 # std::unordered_set
 snippet uset
-	std::unordered_set<${1:T}> ${2};
+	std::unordered_set<${1:T}> ${2:V};
 # std::unordered_map
 snippet umap
-	std::unordered_map<${1:Key}, ${2:T}> ${3};
+	std::unordered_map<${1:Key}, ${2:T}> ${3:N};
 # std::unordered_multiset
 snippet umset
-	std::unordered_multiset<${1:T}> ${2};
+	std::unordered_multiset<${1:T}> ${2:V};
 # std::unordered_multimap
 snippet ummap
-	std::unordered_multimap<${1:Key}, ${2:T}> ${3};
+	std::unordered_multimap<${1:Key}, ${2:T}> ${3:N};
 # std::stack
 snippet stack
-	std::stack<${1:T}> ${2};
+	std::stack<${1:T}> ${2:V};
 # std::queue
 snippet queue
-	std::queue<${1:T}> ${2};
+	std::queue<${1:T}> ${2:V};
 # std::priority_queue
 snippet pqueue
-	std::priority_queue<${1:T}> ${2};
+	std::priority_queue<${1:T}> ${2:V};
 ##
 ## STL smart pointers
 # std::shared_ptr
 snippet sp
 	std::shared_ptr<${1:T}>
 snippet msp
-	std::shared_ptr<${1:T}> ${2} = std::make_shared<$1>(${3});
+	std::shared_ptr<${1:T}> ${2:V} = std::make_shared<$1>(${3:N});
 snippet amsp
-	auto ${1:T} = std::make_shared<${2}>(${3});
+	auto ${1:T} = std::make_shared<${2:V}>(${3:N});
 # std::unique_ptr
 snippet up
 	std::unique_ptr<${1:T}>
 snippet mup
-	std::unique_ptr<${1:T}> ${2} = std::make_unique<$1>(${3});
+	std::unique_ptr<${1:T}> ${2:V} = std::make_unique<$1>(${3:N});
 snippet amup
-	auto ${1} = std::make_unique<${2:T}>(${3});
+	auto ${1:T} = std::make_unique<${2:T}>(${3:N});
 ##
 ## Access Modifiers
 # private
@@ -99,7 +99,7 @@ snippet cl
 	private:
 		${0:/* data */}
 	public:
-		$1(${2});
+		$1(${2:V});
 		virtual ~$1();
 
 	protected:
@@ -107,7 +107,7 @@ snippet cl
 	};
 # member function implementation
 snippet mfun
-	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:N}) {
 		${0}
 	}
 # member function implementation without parameters
@@ -162,10 +162,10 @@ snippet std
 ## Input/Output
 # std::cout
 snippet cout
-	std::cout << ${1} << std::endl;
+	std::cout << ${1:T} << std::endl;
 # std::cin
 snippet cin
-	std::cin >> ${1};
+	std::cin >> ${1:T};
 # std::endl
 snippet endl
 	std::endl
@@ -173,16 +173,16 @@ snippet endl
 ## Casts
 # static
 snippet sca
-	static_cast<${1:unsigned}>(${2:expr})${3}
+	static_cast<${1:unsigned}>(${2:expr})${3:N}
 # dynamic
 snippet dca
-	dynamic_cast<${1:unsigned}>(${2:expr})${3}
+	dynamic_cast<${1:unsigned}>(${2:expr})${3:N}
 # reinterpret
 snippet rca
-	reinterpret_cast<${1:unsigned}>(${2:expr})${3}
+	reinterpret_cast<${1:unsigned}>(${2:expr})${3:N}
 # const
 snippet cca
-	const_cast<${1:unsigned}>(${2:expr})${3}
+	const_cast<${1:unsigned}>(${2:expr})${3:N}
 ## Iteration
 # for i
 snippet fori
@@ -204,21 +204,21 @@ snippet iter
 ## Lambdas
 # lamda (one line)
 snippet ld
-	[${1}](${2}){${3}};
+	[${1:T}](${2:V}){${3:N}};
 # lambda (multi-line)
 snippet lld
-	[${1}](${2}){
-		${3}
+	[${1:T}](${2:V}){
+		${3:N}
 	};
 # snippets exception
 snippet try
 	try {
 
-	}catch(${1}) {
+	}catch(${1:T}) {
 
 	}
 snippet af auto function
-	auto ${1:name}(${2})
+	auto ${1:name}(${2:V})
 	{
 		${0}
 	};
