@@ -228,14 +228,10 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};
 # struct
 snippet st
-	/*! \struct $1
-	 *  \brief ${3:Brief struct description}
-	 *
-	 *  ${4:Detailed description}
-	 */
-	struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
-		${2:Data} /*!< ${4:Description} */
-	}${5: /* optional variable list */};
+	struct ${1} {
+		${0}
+	};
+
 # typedef struct
 snippet tds
 	/*! \struct $2
