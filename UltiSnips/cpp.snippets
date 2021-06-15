@@ -45,6 +45,13 @@ class ${1:`!p snip.rv = snip.basename or "name"`} {
 
 endsnippet
 
+snippet cco " print out iterator"
+for(auto it: ${1}) {
+	std::cout << it  << ' ';
+}
+std::cout << '\n';
+endsnippet
+
 snippet ns "namespace .. (namespace)"
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
 {
