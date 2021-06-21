@@ -283,3 +283,152 @@ snippet gtepar "GTest:add parameterized test"
 # GTest:instantiate parameterized test
 snippet gteparins "GTest:instantiate parameterized test"
 	INSTANTIATE_TEST_SUITE_P(${1:InstantiationName}, ${2:SuiteName}, ${0});
+
+snippet distance
+	std::distance(${1:v1},${2});
+snippet prev
+	std::prev(${1:v1})
+snippet next
+	std::next(${1:v1})
+snippet advance
+	std::advance(${1:v1},${2:N});
+snippet accumulate
+	std::acumulate(${1}.begin(),$1.end(),${2});
+snippet adjacent_find
+	std::adjacent_find(${1}.begin(), $1.end());
+snippet all_of
+	std::all_of(${1}.begin(),$1.end(),${2});
+snippet none_of
+	std::none_of(${1}.begin(),$1.end(),${2});
+snippet any_of
+	std::any_of(${1}.begin(),$1.end(),${2});
+snippet binary_search
+	std::binary_search(${1}.begin(),$1.end(),${2:V});
+snippet clamp
+	std::clamp(${1:X},${2},${3});
+snippet copy
+	std::copy(${1:V}.begin(),$1.end(),${2:V1});
+snippet copy_n
+	std::copy(${1:V}.begin(),${2:N},${3:V1}.begin());
+snippet copy_if
+	std::copy(${1:V}.begin(),$1.end(),${2:V1},${3});
+snippet copy_backward
+	std::copy_backward(${1:V}.begin(), $1.end(), ${2:V1}.end());
+snippet reverse_copy
+	std::reverse_copy(${1:v}.begin(),$1.end(),${2:v1}.begin());
+snippet count
+	std::count(${1:v}.begin(),$1.end(),${2:v1});
+snippet count_if
+	std::count(${1:v}.begin(),$1.end(),${3:F});
+snippet equal
+	std::equal(${1:v1}.begin(),$1.end(),${2:v2});
+snippet equal_range
+	auto [lower,upper] = std::equal_range(${1:sorted}.begin(),$1.end(),${2});
+snippet erase
+	std::erase(${1:v1},${2:val});
+snippet erase_if
+	std::erase(${1:v1},${2:func});
+snippet cerase
+	${1:container}.erase($1.pos1(),$1.optional_iter_pos2());;
+	${1:container}.erase(std::remove($1.begin(),$1.end,${2:VAL}),$1.end());
+	${1:container}.erase(std::remove_if($1.begin(),$1.end,${2:Func}),$1.end());
+snippet fill
+	std::fill(${1:v1}.begin(), $1.end(), ${2:N});
+snippet fill_n
+	std::fill_n(${1:v1}.begin(),${2:N},${3:V});
+snippet find
+	std::find(${1:v1}.begin(), $1.end(), ${2:V});
+snippet find_if
+	std::find(${1:v1}.begin(), $1.end(), ${2:F});
+snippet find_if_not
+	std::find(${1:v1}.begin(), $1.end(), ${2:F});
+snippet find_end
+	std::find_end(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end());
+snippet find_first_of
+	std::find_first_of(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end());
+snippet for_each
+	std::for_each(${1:v1}.begin(),$1.end(),${2:F});
+snippet for_each_n
+	std::for_each(${1:v1}.begin(),${2:N},${3:F});
+snippet includes
+	std::includes(${1:sorted}.begin(),$1.end(),${2:sorted1}.begin(),$2.end(),${3:F});
+snippet inner_product
+	std::inner_product(${1:v1}.begin(),$1.end(),${2:N});
+snippet iota
+	std::iota(${1:V}.begin(),$1.end(),${2:N});
+snippet iter_swap
+	std::iter_swap(${1:X},${2:Y});
+snippet lower_bound
+	std::lower_bound(${1:sorted1}.begin(),$1.end(),${2:N});
+snippet upper_bound
+	std::upper_bound(${1:sorted1}.begin(),$1.end(),${2:N});
+snippet make_heap
+	std::make_heap(${1:V}.begin(),$1.end());
+snippet max_element
+	std::max_element(${1:v}.begin(),$1.end());
+snippet merge
+	std::merge(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet min_element
+	std::min_element(${1:v}.begin(),$1.end());
+snippet minmax_element
+	auto [min,max] = std::minmax_element(${1:v}.begin,$1.end(),${2:F});
+snippet mismatch
+	auto [val1,val2] = std::mismatch(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end());
+snippet move
+	std::move(${1:v1}.begin(),$1.end(),${2:v2}.begin());
+snippet move_backward
+	std::move_backward(${1:v1}.begin(), $1.end(), ${2:v2}.end());
+snippet next_permutation
+	std::next_permutation(${1:v1}.begin(),$1.end(),${2:comparator});
+snippet prev_permutation
+	std::prev_permutation(${1:v1}.begin(),$1.end(),${2:comparator});
+snippet nth_element
+	std::nth_element(${1:v1}.begin(), $1.begin()+${2:N}, $1.end(), ${3:greater<>()});
+snippet partial_sort
+	std::partial_sort(${1:v1}.begin(), $1.begin()+${2:N},$1.end());
+snippet partition
+	auto iter = std::partition(${1}.begin(),$1.end(),${2:func});
+snippet partition_copy
+	std::partition_copy(${1}.begin(),$1.end(),${2}.begin(),${3}.begin,${4:Func});
+snippet remove_copy
+	std::remove_copy(${1:v}.begin(),$1.end();${2:v2}.begin(),${3:VAL});
+snippet replace
+	std::replace(${1:v}.begin(), $1.end(), ${2:OLD},${3:NEW});
+snippet replace_if
+	std::replace_if(${1:v}.begin(), $1.end(), ${2:FUNC},${3:NEW});
+snippet replace_copy
+	std::replace_copy(${1:v}.begin(), $1.end(),${2:v1}.begin(), ${3:OLD},${4:NEW});
+snippet replace_copy_if
+	std::replace_copy_if(${1:v}.begin(), $1.end(),${2:v1}.begin(), ${3:FUNC},${4:NEW});
+snippet reverse
+	std::reverse(${1:v}.begin(),$1.end());
+snippet rotate
+	std::rotate(${1:v}.begin(), $1.begin()+${2:N},$1.end());
+snippet rotate_copy
+	std::rotate_copy(${1:v}.begin(), $1.begin()+${2:N},$1.end(), ${3:v1}.begin());
+snippet set_difference
+	std::set_difference(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet set_intersection
+	std::set_intersection(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet set_symmetric_difference
+	std::set_symmetric_difference(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet set_union
+	std::set_union(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet sort
+	std::sort(${1}.begin(),$1.end());
+snippet shift_left
+	std::shift_left(${1:v1}.begin(),$1.end(), ${2:N});
+snippet shift_right
+	std::shift_right(${1:v1}.begin(),$1.end(), ${2:N});
+snippet swap
+    std::swap(${1:val1}, ${2:val2});
+snippet swap_ranges
+	std::swap_ranges(${1:v1}.begin(),$1.end(),${2:v2}.begin());
+snippet transform
+	std::transform(${1:v1}.begin(),$1.end(),${2:out}.begin(),${3:func});
+snippet transformf
+	std::transform(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end(),${3:func});
+snippet unique
+	std::unique(${1:remove_adjacent_duplicates_better_sorted}.begin(),$1.end());
+snippet unique_copy
+	std::unique_copy(${1:remove_adjacent_duplicates_only_unless_sorted}.begin(),$1.end(),${2:v2}.begin(),${3:optinal_func});
