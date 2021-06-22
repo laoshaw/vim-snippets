@@ -264,6 +264,8 @@ snippet reverse_copy
 	std::reverse_copy(${1:v}.begin(),$1.end(),${2:v1}.begin());
 snippet count
 	std::count(${1:v}.begin(),$1.end(),${2:v1});
+snippet ccount
+	${1:vec}.count(${2:value});
 snippet count_if
 	std::count(${1:v}.begin(),$1.end(),${3:F});
 snippet equal
@@ -284,6 +286,8 @@ snippet fill_n
 	std::fill_n(${1:v1}.begin(),${2:N},${3:V});
 snippet find
 	std::find(${1:v1}.begin(), $1.end(), ${2:V});
+snippet cfind
+	${1:v}.find(${2:value});
 snippet find_if
 	std::find(${1:v1}.begin(), $1.end(), ${2:F});
 snippet find_if_not
@@ -302,6 +306,8 @@ snippet inner_product
 	std::inner_product(${1:v1}.begin(),$1.end(),${2:N});
 snippet iota
 	std::iota(${1:V}.begin(),$1.end(),${2:N});
+snippet insert
+	${1:v}.insert(${2:v1},${3:[count]-value-or-range});
 snippet iter_swap
 	std::iter_swap(${1:X},${2:Y});
 snippet lower_bound
@@ -314,6 +320,8 @@ snippet max_element
 	std::max_element(${1:v}.begin(),$1.end());
 snippet merge
 	std::merge(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
+snippet cmerge
+	${1:list}.merge(${2:list1});
 snippet min_element
 	std::min_element(${1:v}.begin(),$1.end());
 snippet minmax_element
@@ -348,6 +356,8 @@ snippet replace_copy_if
 	std::replace_copy_if(${1:v}.begin(), $1.end(),${2:v1}.begin(), ${3:FUNC},${4:NEW});
 snippet reverse
 	std::reverse(${1:v}.begin(),$1.end());
+snippet creverse
+	${1:list}.reverse();
 snippet rotate
 	std::rotate(${1:v}.begin(), $1.begin()+${2:N},$1.end());
 snippet rotate_copy
@@ -362,6 +372,8 @@ snippet set_union
 	std::set_union(${1:sorted1}.begin(),$1.end(),${2:sorted2}.begin(),$2.end(),${3:sorted3}.begin());
 snippet sort
 	std::sort(${1}.begin(),$1.end());
+snippet csort
+	${1:list}.sort();
 snippet shift_left
 	std::shift_left(${1:v1}.begin(),$1.end(), ${2:N});
 snippet shift_right
@@ -376,5 +388,7 @@ snippet transformf
 	std::transform(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end(),${3:func});
 snippet unique
 	std::unique(${1:remove_adjacent_duplicates_better_sorted}.begin(),$1.end());
+snippet cunique
+	${1:list}.unique();
 snippet unique_copy
 	std::unique_copy(${1:remove_adjacent_duplicates_only_unless_sorted}.begin(),$1.end(),${2:v2}.begin(),${3:optinal_func});
