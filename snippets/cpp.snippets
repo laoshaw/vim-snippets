@@ -413,7 +413,7 @@ snippet reverse
 snippet creverse
 	${1:list}.reverse();
 snippet rotate
-	std::rotate(${1:v}.begin(), $1.begin()+${2:N},$1.end());
+	std::rotate(${1:v}.begin(), $1.begin()+v.size()-${2:N},$1.end());
 snippet rotate_copy
 	std::rotate_copy(${1:v}.begin(), $1.begin()+${2:N},$1.end(), ${3:v1}.begin());
 snippet set_difference
