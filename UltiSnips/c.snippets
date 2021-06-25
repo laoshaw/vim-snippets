@@ -29,26 +29,6 @@ ${1:#pragma mark -
 $0
 endsnippet
 
-snippet main "main() (main)"
-int main(int argc, char *argv[])
-{
-	${VISUAL}$0
-	return 0;
-}
-endsnippet
-
-snippet for "for loop (for)"
-for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}$0
-}
-endsnippet
-
-snippet fori "for int loop (fori)"
-for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}$0
-}
-endsnippet
-
 snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
@@ -61,19 +41,6 @@ endsnippet
 
 snippet printf "printf .. (printf)"
 printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
-endsnippet
-
-snippet st "struct"
-struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
-	${0:/* data */}
-};
-endsnippet
-
-snippet fun "function" b
-${1:void} ${2:function_name}($3)
-{
-	${VISUAL}$0
-}
 endsnippet
 
 snippet fund "function declaration" b
@@ -110,41 +77,8 @@ endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
 snippet func "Function Header"
-/******************************************************************************
-* Function:         $1
-* Description:      ${4:${VISUAL}}
-* Where:`!p
-snip.rv = ""
-snip >> 2
-
-args = get_args(t[2])
-if args:
-	for arg in args:
-		snip.rv += '\n' + '*' + ' '*19 + arg + ' - TODO'
-snip << 2
-`
-* Return:           $5
-* Error:            $6
-*****************************************************************************/
 ${1}($2){
 	${0}
 }
 endsnippet
 # vim:ft=snippets:
-
-snippet mu "minunit" b
-MU_TEST(test_$1) {
-    mu_assert($2,"${3:assert failed at __func__, __FILE__:__LINE__}");
-}
-endsnippet
-
-snippet mus "minunit suite" b
-MU_TEST_SUITE(${1:test_suite}) {
-    MU_RUN_TEST(test_$2);
-}
-endsnippet
-
-snippet mur "run minunit" b
-MU_RUN_SUITE(${1:test_suite});
-MU_REPORT();
-endsnippet

@@ -3,10 +3,12 @@ extends c
 ##
 ## Preprocessor
 # #include <...>
-snippet incc
+snippet inc
 	#include <${1:iostream}>
-snippet binc
-	#include <boost/${1:shared_ptr}.hpp>
+snippet incl
+	#include "${1:file}.hpp"
+snippet incb
+	#include <boost/${1:boost}.hpp>
 ##
 ## STL Collections
 snippet cck
@@ -67,14 +69,14 @@ snippet pqueue
 snippet sp
 	std::shared_ptr<${1:T}>
 snippet msp
-	std::shared_ptr<${1:T}> ${2:V} = std::make_shared<$1>(${3:N});
+	std::make_shared<${1:T}>(${2:V});
 snippet amsp
 	auto ${1:T} = std::make_shared<${2:V}>(${3:N});
 # std::unique_ptr
 snippet up
 	std::unique_ptr<${1:T}>
 snippet mup
-	std::unique_ptr<${1:T}> ${2:V} = std::make_unique<$1>(${3:N});
+	std::make_unique<${1:T}>(${2:V});
 snippet amup
 	auto ${1:T} = std::make_unique<${2:T}>(${3:N});
 ##
@@ -95,19 +97,25 @@ snippet fr
 snippet mu
 	mutable
 ##
+snippet comment
+	/**
+	 * ${1: subject}.
+	 *
+	 * ${2: detailed info}.
+	 *
+	 * ${3: @param @return lines}.
+	 */
+snippet todo
+	/** @todo {$1:T} */
 ## Class
 # class
 snippet cl
-	class ${1:`vim_snippets#Filename('$1', 'name')`}
+	class ${1}
 	{
-	private:
-		${0:/* data */}
-	public:
-		$1(${2:V});
-		virtual ~$1();
-
-	protected:
-		m_${5}; /*!< ${6:Member description} */
+	  public:
+		${2}
+	  private:
+		${3}
 	};
 # member function implementation
 snippet mfun
@@ -116,37 +124,16 @@ snippet mfun
 	}
 # member function implementation without parameters
 snippet dmfun0
-	/*! \brief ${4:Brief function description here}
-	 *
-	 *  ${5:Detailed description}
-	 *
-	 * \return ${6:Return parameter description}
-	 */
 	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() {
 		${0}
 	}
 # member function implementation with one parameter
 snippet dmfun1
-	/*! \brief ${6:Brief function description here}
-	 *
-	 *  ${7:Detailed description}
-	 *
-	 * \param $4 ${8:Parameter description}
-	 * \return ${9:Return parameter description}
-	 */
 	${5:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter}) {
 		${0}
 	}
 # member function implementation with two parameter
 snippet dmfun2
-	/*! \brief ${8:Brief function description here}
-	 *
-	 *  ${9:Detailed description}
-	 *
-	 * \param $4 ${10:Parameter description}
-	 * \param $6 ${11:Parameter description}
-	 * \return ${12:Return parameter description}
-	 */
 	${7:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter}) {
 		${0}
 	}
@@ -161,18 +148,43 @@ snippet ans
 	}
 ##
 # std::
+snippet using
+	using namespace std;
 snippet std
 	std::
 ## Input/Output
 # std::cout
 snippet cout
 	std::cout << ${1:T} << '\n';
+snippet coutn
+	std::cout << '\n';
 # std::cin
 snippet cin
 	std::cin >> ${1:T};
 # std::endl
 snippet endl
 	std::endl;
+snippet cco
+	for(auto& i: ${1:C}) {
+		std::cout << i << ' ';
+	}
+	std::cout << '\n';
+snippet ccm
+	for(auto& [k,v]:${1:pair}) {
+		std::cout << k << " : " << v << '\n';
+	}
+snippet thread
+	std::thread ${1:th};
+snippet threadf
+	std::thread(${1:F,args});
+snippet mutex
+	std::mutex ${1:m};
+snippet lockg
+	std::lock_guard<std::mutex> lock(${1:mraii});
+snippet ulock
+	std::unique_lock<std::mutex> lock(${1:mraii});
+snippet atomic
+	std::atomic<int> ${1:count};
 ##
 ## Casts
 # static
@@ -188,22 +200,27 @@ snippet rca
 # const
 snippet cca
 	const_cast<${1:unsigned}>(${2:expr});
+snippet aca
+	std::any_cast<${1:type}>(${2:val})
 ## Iteration
 # for i
-snippet fori
-	for (int ${1:i} = 0; $1 < ${2:count}; ++$1) {
-		${4}
+snippet for
+	for (int i = 0; i < ${1:count}; ++i) {
+		${2}
 	}
-
+snippet fors
+	for (size_t i = 0; i < ${1:count}; ++i) {
+		${2}
+	}
 # foreach
 snippet fore
-	for (const auto& ${1:elem} : ${2:container}) {
+	for (${1:const auto& elem} : ${2:container}) {
 		${3}
 	}
 # iterator
-snippet iter
-	for (auto ${1:it} = ${2:container}.begin(); $1 != $2.end(); ++$1) {
-		${3:std::cout << *$1 << '\n';}
+snippet forc
+	for (auto& it = ${1:container}.begin(); it != $1.end(); ++it) {
+		${2:std::cout << *it << '\n';}
 	}
 # begin-end similar to ranges
 snippet beg
@@ -230,6 +247,8 @@ snippet af auto function
 	{
 		${0}
 	};
+snippet string
+	std::string
 snippet distance
 	std::distance(${1:v1},${2});
 snippet prev
@@ -328,6 +347,8 @@ snippet minmax_element
 	auto [min,max] = std::minmax_element(${1:v}.begin,$1.end(),${2:F});
 snippet mismatch
 	auto [val1,val2] = std::mismatch(${1:v1}.begin(),$1.end(),${2:v2}.begin(),$2.end());
+snippet cmove
+	std::move(${1:OBJ});
 snippet move
 	std::move(${1:v1}.begin(),$1.end(),${2:v2}.begin());
 snippet move_backward
@@ -344,8 +365,14 @@ snippet partition
 	auto iter = std::partition(${1}.begin(),$1.end(),${2:func});
 snippet partition_copy
 	std::partition_copy(${1}.begin(),$1.end(),${2}.begin(),${3}.begin,${4:Func});
+snippet remove
+	std::remove(${1:v}.begin(),$1.end(),${2:V});
+snippet remove_if
+	std::remove_if(${1:v}.begin(),$1.end(),${2:F});
 snippet remove_copy
-	std::remove_copy(${1:v}.begin(),$1.end();${2:v2}.begin(),${3:VAL});
+	std::remove_copy(${1:v}.begin(),$1.end();${2:v2}.begin(),${3:VAL_REMOVED});
+snippet remove_copy_if
+	std::remove_copy_if(${1:v}.begin(),$1.end();${2:v2}.begin(),${3:FUNC_REMOVED});
 snippet replace
 	std::replace(${1:v}.begin(), $1.end(), ${2:OLD},${3:NEW});
 snippet replace_if
