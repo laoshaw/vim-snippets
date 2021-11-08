@@ -485,3 +485,27 @@ snippet cunique
 	${1:list}.unique();
 snippet unique_copy
 	std::unique_copy(${1:remove_adjacent_duplicates_only_unless_sorted}.begin(),$1.end(),${2:v2}.begin(),${3:optinal_func});
+snippet scp
+	#pragma once
+	#include <systemc>
+	using namespace sc_core;
+snippet sch
+	#include <systemc>
+	using namespace sc_core;
+snippet scs
+	SC_MODULE(${1}) {
+		${2}
+	};
+snippet scc
+	SC_CTOR(${1}) {
+		${2}
+	}
+snippet scm
+	int sc_main(int argc, char *argv[]) {
+		${1}
+
+		sc_start();
+
+		return 0;
+	}
+## NOTE must TAB to indent, can't space!!!
