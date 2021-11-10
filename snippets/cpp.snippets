@@ -9,6 +9,15 @@ snippet incl
 	#include "${1:file}.hpp"
 snippet incb
 	#include <boost/${1:boost}.hpp>
+snippet mcc
+	#include <iostream>
+	using namespace std;
+
+	int main(int argc, char *argv[]) {
+		${1}
+
+		return 0;
+	}
 ##
 ## STL Collections
 snippet cck
