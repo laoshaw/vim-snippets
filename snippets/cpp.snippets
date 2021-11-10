@@ -222,11 +222,12 @@ snippet cca
 snippet aca
 	std::any_cast<${1:type}>(${2:val})
 ## Iteration
-# for i
-snippet for
+# for integer
+snippet fori
 	for (int i = 0; i < ${1:count}; ++i) {
 		${2}
 	}
+# for size_t
 snippet fors
 	for (size_t i = 0; i < ${1:count}; ++i) {
 		${2}
@@ -237,7 +238,7 @@ snippet fore
 		${3}
 	}
 # iterator
-snippet forc
+snippet forit
 	for (auto& it = ${1:container}.begin(); it != $1.end(); ++it) {
 		${2:std::cout << *it << '\n';}
 	}
@@ -488,10 +489,17 @@ snippet unique_copy
 snippet scp
 	#pragma once
 	#include <systemc>
+	#include <iostream>
+
 	using namespace sc_core;
+	using namespace std;
+
 snippet sch
 	#include <systemc>
+	#include <iostream>
+
 	using namespace sc_core;
+	using namespace std;
 snippet scs
 	SC_MODULE(${1}) {
 		${2}
@@ -511,14 +519,20 @@ snippet scm
 snippet tlmp
 	#pragma once
 	#include <systemc>
+	#include <tlm>
+	#include <iostream>
+
 	using namespace sc_core;
 	using namespace sc_dt;
 	using namespace std;
-	#include <tlm>
+
 snippet tlmh
 	#include <systemc>
+	#include <tlm>
+	#include <iostream>
+
 	using namespace sc_core;
 	using namespace sc_dt;
 	using namespace std;
-	#include <tlm>
+
 ## NOTE must TAB to indent, can't space!!!
