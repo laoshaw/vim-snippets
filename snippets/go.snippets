@@ -81,7 +81,7 @@ snippet el "else"
 		${0:${VISUAL}}
 	}
 
-snippet ir "if error not nil, return err"
+snippet err "if error not nil, return err"
 	if err != nil {
 		return err
 	}
@@ -147,8 +147,14 @@ snippet mp "map"
 	map[${1:string}]${0:int}
 
 snippet main "func main()"
+	package ${1:main}
+
+	import (
+		"${2:fmt}"
+	)
+
 	func main() {
-		${1}
+		${0}
 	}
 	${0}
 
