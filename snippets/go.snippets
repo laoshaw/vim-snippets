@@ -147,16 +147,15 @@ snippet mp "map"
 	map[${1:string}]${0:int}
 
 snippet main "func main()"
-	package ${1:main}
+	package main
 
 	import (
-		"${2:fmt}"
+		"fmt"
 	)
 
 	func main() {
-		${0}
+		${1}
 	}
-	${0}
 
 snippet nw "new"
 	new(${0:type})
