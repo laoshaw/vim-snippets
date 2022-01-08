@@ -97,16 +97,20 @@ snippet amup
 ## Access Modifiers
 # private
 snippet pri
-	private
+	private:
+	  ${1:P}
 # protected
 snippet pro
-	protected
+	protected:
+	  ${1:P}
 # public
 snippet pub
-	public
+	public:
+	  ${1:M}
 # friend
 snippet fr
-	friend
+	friend:
+	  ${1:F}
 # mutable
 snippet mu
 	mutable
@@ -124,10 +128,7 @@ snippet comment
 snippet cl
 	class ${1}
 	{
-	  public:
-		${2}
-	  private:
-		${3}
+	  ${2:P}
 	};
 # member function implementation
 snippet mfun
