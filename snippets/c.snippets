@@ -2,16 +2,26 @@
 # main
 snippet prag
     #pragma once
-snippet main
+
+snippet cp
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <assert.h>
+	#include <pthread.h>
+	#include <syslog.h>
+	#include <unistd.h>
+	#include <sys/types.h>
+	#include <sys/stat.h>
+
 	int main(int argc, char *argv[]) {
-		${1}
+		${0}
 
 		return 0;
 	}
-snippet maina
-	int main(int argc, char *argv[])
-	{
-		${1:code}
+snippet main
+	int main(int argc, char *argv[]) {
+		${1}
 
 		return 0;
 	}
