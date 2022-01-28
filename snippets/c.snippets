@@ -1,5 +1,10 @@
 ## Main
 # main
+snippet inc
+	#include <${1}>
+snippet incl
+	#include "${1}"
+
 snippet prag
 	#pragma once
 
@@ -13,6 +18,11 @@ snippet cp
 	#include <unistd.h>
 	#include <sys/types.h>
 	#include <sys/stat.h>
+	#include <sys/mman.h>
+	#include <fcntl.h>
+	#include <signa.h>
+	#include <mqueue.h>
+	#include <semaphore.h>
 
 	int main(int argc, char *argv[]) {
 		${0}
@@ -29,6 +39,11 @@ snippet cpn
 	#include <unistd.h>
 	#include <sys/types.h>
 	#include <sys/stat.h>
+	#include <sys/mman.h>
+	#include <fcntl.h>
+	#include <signa.h>
+	#include <mqueue.h>
+	#include <semaphore.h>
 	#include <sys/socket.h>
 	#include <netinet/in.h>
 	#include <arpa/inet.h>
