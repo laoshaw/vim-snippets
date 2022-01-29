@@ -9,8 +9,14 @@ snippet prag
 snippet error
 	perror("${0}");
 	exit(EXIT_FAILURE);
-snippet exit
+snippet exits
 	exit(EXIT_SUCCESS);
+snippet exitf
+	exit(EXIT_FAILURE);
+snippet rets
+	return EXIT_SUCCESS;
+snippet retf
+	return EXIT_FAILURE;
 snippet cp
 	#include <stdio.h>
 	#include <stdlib.h>
