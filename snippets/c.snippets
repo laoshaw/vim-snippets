@@ -4,10 +4,13 @@ snippet inc
 	#include <${1}>
 snippet incl
 	#include "${1}"
-
 snippet prag
 	#pragma once
-
+snippet error
+	perror("${0}");
+	exit(EXIT_FAILURE);
+snippet exit
+	exit(EXIT_SUCCESS);
 snippet cp
 	#include <stdio.h>
 	#include <stdlib.h>
