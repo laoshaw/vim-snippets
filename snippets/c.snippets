@@ -17,6 +17,10 @@ snippet rets
 	return EXIT_SUCCESS;
 snippet retf
 	return EXIT_FAILURE;
+snippet ut
+	#ifdef UNITEST
+	${0}
+	#endif
 snippet cp
 	#include <stdio.h>
 	#include <stdlib.h>
