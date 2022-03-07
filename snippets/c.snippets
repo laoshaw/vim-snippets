@@ -27,6 +27,18 @@ snippet cp
 	#include <stdlib.h>
 	#include <string.h>
 	#include <assert.h>
+
+	int main(int argc, char *argv[]) {
+		${0}
+
+		return 0;
+	}
+snippet cpx
+	#include <stdio.h>
+	#include <stdint.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <assert.h>
 	#include <pthread.h>
 	#include <syslog.h>
 	#include <unistd.h>
