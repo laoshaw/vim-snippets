@@ -243,9 +243,26 @@ snippet vdiv
 	</div>
 
 snippet vbutton
-	<button @click="$1">$2</button>
+	<button>$1</button>
 
 snippet vselect
 	<select v-model=$1 >
 	  <option></option>
 	</select>
+
+snippet vdata
+	data() {
+	  return {
+	    $1
+	  };
+	},
+
+snippet vcomputed
+	computed: {
+	  $1
+	},
+
+snippet vmethods
+	methods: {
+	 $1
+	},
