@@ -21,15 +21,22 @@ snippet transition
 
 snippet vbase
 	<template>
-		<div>
+	  <div>
 
-		</div>
+	  </div>
 	</template>
 
-	<script>
-		export default{
-			${0}
-		}
+	<script lang="ts">
+	import { defineComponent } from "vue";
+	export default defineComponent{
+	  name: "App",
+		data() {
+			return {
+
+			}
+		},
+		${0}
+	}
 	</script>
 
 	<style scoped>
@@ -206,3 +213,39 @@ snippet trans
 snippet transc
 	$t('$1', { $2: $3 })
 
+snippet vform
+	<form @submit.prevent=${1} >
+	  ${2}
+	</form>
+
+snippet vinput
+	<input v-model.$1 />
+
+snippet vlabel
+	<label>$1</label>
+
+snippet vtemplate
+	<template>
+	  $1
+	</template>
+
+snippet vstyle
+	<style scoped>
+	  $1
+	</style>
+
+snippet vp
+	<p>$1</p>
+
+snippet vdiv
+	<div>
+	  $1
+	</div>
+
+snippet vbutton
+	<button @click="$1">$2</button>
+
+snippet vselect
+	<select v-model=$1 >
+	  <option></option>
+	</select>
