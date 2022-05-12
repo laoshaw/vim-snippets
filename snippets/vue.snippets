@@ -22,21 +22,11 @@ snippet transition
 snippet vbase
 	<template>
 	  <div>
-
 	  </div>
 	</template>
 
-	<script lang="ts">
-	import { defineComponent } from "vue";
-	export default defineComponent{
-	  name: "App",
-		data() {
-			return {
-
-			}
-		},
-		${0}
-	}
+	<script setup lang="ts">
+	import { $1 } from "vue"
 	</script>
 
 	<style scoped>
@@ -134,7 +124,7 @@ snippet vgetters
 		}
 	}
 
-snippet vimport
+snippet vimportc
 	import ${1:New} from './components/$1.vue';
 
 snippet vkeep
@@ -173,17 +163,7 @@ snippet vprops
 	},
 
 snippet vstore
-	import Vue from 'vue';
-	import Vuex from 'vuex';
-
-	Vue.use(Vuex);
-
-	export const store = new Vuex.Store({
-		state: {
-			${1:key}: ${2:value}
-		}
-	});
-
+	import {defineStore} from 'pinia';
 
 # vue-i18n snippets https://github.com/kazupon/vue-i18n
 
@@ -224,9 +204,39 @@ snippet vdiv
 	</div>
 
 snippet vbutton
-	<button @click="$1">$2</button>
+	<button>$1</button>
 
 snippet vselect
 	<select v-model=$1 >
 	  <option></option>
 	</select>
+
+snippet vdata
+	data() {
+	  return {
+	    $1
+	  };
+	},
+
+snippet vcomputed
+	computed: {
+	  $1
+	},
+
+snippet vmethods
+	methods: {
+	 $1
+	},
+
+snippet vscript
+	<script setup lang="ts">
+	$0
+	</script>
+
+snippet vstyle
+	<style scoped>
+	$1
+	</style>
+
+snippet vimport
+	import {$1} from 'vue'
