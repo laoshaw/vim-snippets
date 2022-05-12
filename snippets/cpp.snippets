@@ -426,7 +426,6 @@ snippet temp
 	template<typename ${1}>
 
 snippet scp
-	#pragma once
 	#include <systemc>
 	#include <iostream>
 
@@ -441,24 +440,29 @@ snippet scp
 		return 0;
 	}
 snippet sch
+	#pragma once
 	#include <systemc>
 	#include <iostream>
 
 	using namespace sc_core;
 	using namespace std;
-snippet scss
-	struct $1 : public sc_module {
-
-	};
-snippet scs
+snippet scm
 	SC_MODULE(${1}) {
 		${2}
+	};
+snippet scmm
+	struct $1 : public sc_module {
+
 	};
 snippet scc
 	SC_CTOR(${1}) {
 		${2}
 	}
-snippet scm
+snippet sccc
+	${1}(sc_module_name n): sc_module(n) {
+		${2}
+	}
+snippet scma
 	int sc_main(int argc, char *argv[]) {
 		${1}
 
@@ -467,7 +471,6 @@ snippet scm
 		return 0;
 	}
 snippet tlmp
-	#pragma once
 	#include <tlm>
 	#include <iostream>
 
@@ -484,6 +487,7 @@ snippet tlmp
 		return 0;
 	}
 snippet tlmh
+	#pragma once
 	#include <tlm>
 	#include <iostream>
 
