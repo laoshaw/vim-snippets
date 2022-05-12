@@ -508,6 +508,13 @@ snippet scp
 	using namespace sc_core;
 	using namespace std;
 
+	int sc_main(int argc, char *argv[]) {
+		${1}
+
+		sc_start();
+
+		return 0;
+	}
 snippet sch
 	#include <systemc>
 	#include <iostream>
@@ -544,6 +551,13 @@ snippet tlmp
 	using namespace std;
 	using namespace tlm;
 
+	int sc_main(int argc, char *argv[]) {
+		${1}
+
+		sc_start();
+
+		return 0;
+	}
 snippet tlmh
 	#include <tlm>
 	#include <iostream>
