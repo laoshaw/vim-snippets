@@ -15,6 +15,48 @@ snippet cpp
 
 		return 0;
 	}
+snippet inca
+	#include <algorithm>
+snippet incar
+	#include <array>
+snippet incb
+	#include <bitset>
+snippet incd
+	#include <deque>
+snippet ince
+	#include <exception>
+snippet incf
+	#include <forward_list>
+snippet incfu
+	#include <functional>
+snippet inci
+	#include <iostream>
+snippet incl
+	#include <list>
+snippet incm
+	#include <memory>
+snippet incn
+	#include <numeric>
+snippet incq
+	#include <queue>
+snippet incr
+	#include <random>
+snippet incs
+	#include <string>
+snippet incse
+	#include <set>
+snippet inct
+	#include <tuple>
+snippet incu
+	#include <utility>
+snippet incum
+	#include <unordered_map>
+snippet incus
+	#include <unordered_set>
+snippet incv
+	#include <vector>
+snippet incva
+	#include <valarray>
 ##
 ## STL Collections
 # std::array
@@ -118,26 +160,6 @@ snippet cl
 	{
 	  ${2:P}
 	};
-# member function implementation
-snippet mfun
-	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:N}) {
-		${0}
-	}
-# member function implementation without parameters
-snippet dmfun0
-	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() {
-		${0}
-	}
-# member function implementation with one parameter
-snippet dmfun1
-	${5:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter}) {
-		${0}
-	}
-# member function implementation with two parameter
-snippet dmfun2
-	${7:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter}) {
-		${0}
-	}
 # namespace
 snippet ns
 	namespace ${1:`vim_snippets#Filename('', 'my')`} {
@@ -166,12 +188,12 @@ snippet cin
 snippet endl
 	std::endl;
 snippet cco
-	for(auto& i: ${1:C}) {
+	for(const auto& i: ${1:C}) {
 		std::cout << i << ' ';
 	}
 	std::cout << '\n';
 snippet ccm
-	for(auto& [k,v]:${1:pair}) {
+	for(const auto& [k,v]:${1:pair}) {
 		std::cout << k << " : " << v << '\n';
 	}
 snippet thread
