@@ -86,7 +86,7 @@ snippet cpn
 
 snippet main
 	int main() {
-		${1:code}
+		${1}
 
 		return 0;
 	}
@@ -98,7 +98,7 @@ snippet maina
 	}
 snippet mainv
 	int main(void) {
-		${1:code}
+		${1}
 
 		return 0;
 	}
@@ -107,9 +107,6 @@ snippet todo
 	// TODO: ${1:todo}
 ## Preprocessor
 # #include <...>
-snippet incc
-	#include <${1:stdio}.h>
-# #include "..."
 snippet inch
 	#include "${1:X}.h"
 # ifndef...define...endif
