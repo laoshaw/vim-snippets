@@ -577,3 +577,8 @@ snippet print
 			std::cout << e << " ";
 		std::cout << '\n';
 	}
+snippet rand1
+	std::mt19937{std::random_device{}()}
+snippet rand2
+	std::random_device rd;
+	std::mt19937 g(rd());
