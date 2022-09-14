@@ -286,13 +286,13 @@ snippet cin
 # std::endl
 snippet endl
 	std::endl;
-snippet cco
+snippet fork
 	for(const auto& i: ${1}) {
 		std::cout << i << ' ';
 	}
 	std::cout << '\n';
 
-snippet ccm
+snippet forkv
 	for(const auto& [k,v]:${1}) {
 		std::cout << k << " : " << v << '\n';
 	}
@@ -339,7 +339,7 @@ snippet fors
 	}
 # foreach
 snippet fore
-	for (${1:const auto& elem} : ${2:container}) {
+	for (const auto& i : ${2}) {
 		${3}
 	}
 # iterator
