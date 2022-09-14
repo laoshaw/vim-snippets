@@ -16,10 +16,13 @@ snippet cpp
 	#include <random>
 	#include <chrono>
 	#include <cassert>
+	#include <ranges>
 	#include <vector>
 	#include <string>
 
-	using namespace std;
+	namespace s = std;
+	namespace r = std::ranges;
+	namespace v = std::views;
 
 	int main() {
 		${1}
