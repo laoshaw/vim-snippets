@@ -313,13 +313,13 @@ snippet fork
 	for(const auto& i: ${1}) {
 		std::cout << i << " : ";
 	}
-	std::cout << '\n';
+	std::cout << "\n\n";
 
 snippet forkv
 	for(const auto& [k,v]:${1}) {
 		std::cout << k << " , " << v << " : ";
 	}
-	std::cout << '\n';
+	std::cout << "\n\n";
 
 snippet thread
 	std::thread ${1:th};
