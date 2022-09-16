@@ -13,19 +13,14 @@ snippet mainn
 # #include <...>
 snippet u
 	using namespace std;
-
 snippet ur
 	using namespace std::ranges;
-
 snippet uv
 	using namespace std::views;
-
 snippet nr
 	namespace r = std::ranges;
-
 snippet nv
 	namespace v = std::views;
-
 snippet s
 	std::
 snippet co
@@ -34,19 +29,16 @@ snippet ci
 	std::cin  >> ${1}
 snippet nn
 	'\n';
-
 snippet fork
 	for(const auto& i: ${1}) {
 		std::cout << i << ", ";
 	}
 	std::cout << "\n\n";
-
 snippet forkv
 	for(const auto& [k,v]:${1}) {
 		std::cout << k << ":" << v << ", ";
 	}
 	std::cout << "\n\n";
-
 snippet be
 	begin(), ${1}.end()
 snippet b
