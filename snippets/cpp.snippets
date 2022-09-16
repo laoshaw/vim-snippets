@@ -3,6 +3,10 @@ extends c
 ##
 ## Preprocessor
 # #include <...>
+snippet using
+	using namespace std;
+snippet s
+	std::
 snippet incboost
 	#include <boost/${1:boost}.hpp>
 snippet be
@@ -10,15 +14,15 @@ snippet be
 snippet b
 	begin()
 snippet e
-	end()
+	std::end()
 snippet sv
-	string_view()
+	std::string_view()
 snippet v
-	vector
-snippet s
-	string
+	std::vector
+snippet st
+	std::string
 snippet ss
-	stringstream
+	std::stringstream
 snippet cpp
 	#include <iostream>
 	#include <algorithm>
@@ -242,10 +246,6 @@ snippet ans
 	}
 ##
 # std::
-snippet using
-	using namespace std;
-snippet std
-	std::
 ## Input/Output
 # std::cout
 snippet cout
