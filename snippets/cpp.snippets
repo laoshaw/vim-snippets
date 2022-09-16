@@ -11,12 +11,42 @@ snippet mainn
 ##
 ## Preprocessor
 # #include <...>
-snippet using
+snippet u
 	using namespace std;
+
+snippet ur
+	using namespace std::ranges;
+
+snippet uv
+	using namespace std::views;
+
+snippet nr
+	namespace r = std::ranges;
+
+snippet nv
+	namespace v = std::views;
+
 snippet s
 	std::
-snippet incboost
-	#include <boost/${1:boost}.hpp>
+snippet co
+	std::cout << ${1}
+snippet ci
+	std::cin  >> ${1}
+snippet nn
+	'\n';
+
+snippet fork
+	for(const auto& i: ${1}) {
+		std::cout << i << ", ";
+	}
+	std::cout << "\n\n";
+
+snippet forkv
+	for(const auto& [k,v]:${1}) {
+		std::cout << k << ":" << v << ", ";
+	}
+	std::cout << "\n\n";
+
 snippet be
 	begin(), ${1}.end()
 snippet b
@@ -31,6 +61,8 @@ snippet st
 	std::string
 snippet ss
 	std::stringstream
+snippet incboost
+	#include <boost/${1:boost}.hpp>
 snippet cpp
 	#include <iostream>
 	#include <algorithm>
@@ -301,26 +333,8 @@ snippet cout
 	std::cout << ${1} << '\n';
 snippet coutn
 	std::cout << '\n';
-# std::cin
-snippet cin
-	std::cin >> ${1};
-# std::endl
 snippet endl
 	std::endl;
-snippet nn
-	'\n';
-snippet fork
-	for(const auto& i: ${1}) {
-		std::cout << i << ", ";
-	}
-	std::cout << "\n\n";
-
-snippet forkv
-	for(const auto& [k,v]:${1}) {
-		std::cout << k << ":" << v << ", ";
-	}
-	std::cout << "\n\n";
-
 snippet thread
 	std::thread ${1:th};
 snippet threadf
