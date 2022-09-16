@@ -22,20 +22,20 @@ snippet ci
 snippet nn
 	'\n';
 snippet fork
-	for(const auto& i: ${1}) {
-		std::cout << i << ", ";
-	}
+	for(const auto& i: ${1}) { std::cout << i << ", "; }
 	std::cout << "\n\n";
 snippet forkv
-	for(const auto& [k,v]:${1}) {
-		std::cout << k << ":" << v << ", ";
-	}
+	for(const auto& [k,v]:${1}) { std::cout << k << ":" << v << ", "; }
 	std::cout << "\n\n";
 snippet be
-	begin(), ${1}.end()
+	begin(), ${1}.end()${2}
 snippet b
 	begin()
 snippet e
+	end()
+snippet sb
+	std::begin()
+snippet se
 	std::end()
 snippet sv
 	std::string_view()
