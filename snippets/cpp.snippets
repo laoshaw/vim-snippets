@@ -3,17 +3,22 @@ extends c
 ##
 ## Preprocessor
 # #include <...>
+snippet s
+	std::
 snippet u
-	using namespace std;
-snippet ur
-	using namespace std::ranges;
-snippet uv
-	using namespace std::views;
-snippet us
-	using namespace std::string_literals;
+	using
 snippet uc
+	using std::cout;
+snippet un
+	using namespace std;
+snippet unr
+	using namespace std::ranges;
+snippet unv
+	using namespace std::views;
+snippet uns
+	using namespace std::string_literals;
+snippet unc
 	using namespace std::chrono;
-snippet ucl
 	using namespace std::chrono_literals;
 snippet nr
 	namespace r = std::ranges;
@@ -21,8 +26,6 @@ snippet nv
 	namespace v = std::views;
 snippet nc
 	namespace c = std::chrono;
-snippet s
-	std::
 snippet co
 	std::cout << ${1}
 snippet ci
@@ -73,6 +76,7 @@ snippet cpp
 	namespace s = std;
 	namespace r = std::ranges;
 	namespace v = std::views;
+	using std::cout;
 
 	int main() {
 		${1}
