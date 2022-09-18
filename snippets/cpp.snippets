@@ -84,13 +84,17 @@ snippet cpp
 	#include <chrono>
 	#include <cassert>
 	#include <ranges>
+	#include <fstream>
 	#include <vector>
 	#include <string>
 
 	namespace s = std;
 	namespace r = std::ranges;
 	namespace v = std::views;
+	namespace c = std::chrono;
+
 	using std::cout;
+	using std::cin;
 
 	int main() {
 		${1}
