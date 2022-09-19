@@ -290,47 +290,6 @@ snippet cl
 	class ${1} {
 	  ${2}
 	};
-# member function implementation
-snippet mfun
-	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:N}) {
-		${0}
-	}
-# member function implementation without parameters
-snippet dmfun0
-	/*! \brief ${4:Brief function description here}
-	 *
-	 *  ${5:Detailed description}
-	 *
-	 * \return ${6:Return parameter description}
-	 */
-	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() {
-		${0}
-	}
-# member function implementation with one parameter
-snippet dmfun1
-	/*! \brief ${6:Brief function description here}
-	 *
-	 *  ${7:Detailed description}
-	 *
-	 * \param $4 ${8:Parameter description}
-	 * \return ${9:Return parameter description}
-	 */
-	${5:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter}) {
-		${0}
-	}
-# member function implementation with two parameter
-snippet dmfun2
-	/*! \brief ${8:Brief function description here}
-	 *
-	 *  ${9:Detailed description}
-	 *
-	 * \param $4 ${10:Parameter description}
-	 * \param $6 ${11:Parameter description}
-	 * \return ${12:Return parameter description}
-	 */
-	${7:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter}) {
-		${0}
-	}
 # namespace
 snippet ns
 	namespace ${1:`vim_snippets#Filename('', 'my')`} {
@@ -426,54 +385,8 @@ snippet af auto function
 	{
 		${0}
 	};
-# Range-v3 transform
-snippet transform "ranges::views::transform"
-	${1:${2:std::}${3:ranges::}views::}transform($4)
-# Range-v3 transform
-snippet filter "ranges::views::filter"
-	${1:${2:std::}${3:ranges::}views::}filter($4)
-# Range-v3 ranges::
-snippet r "ranges::"
-	ranges::
-# Range-v3 ranges::views::
-snippet rv "ranges::views::"
-	ranges::views::
-# Range-v3 ranges::actions::
-snippet ra "ranges::actions::"
-	ranges::actions::
-# STL std::ranges::
-snippet sr "std::ranges::"
-	std::ranges::
-# STL std::views::
-snippet sv "std::views::"
-	std::views::
-##
-## Tests
-# GTest:add main
-snippet gtemain "GTest:add main"
-	int main(int argc, char **argv) {
-		testing::InitGoogleTest(&argc, argv);
-		return RUN_ALL_TESTS();
-	}
-# GTest:add test
-snippet gtetest "GTest:add test"
-	TEST(${1:SuiteName}, ${2:TestName}) {
-		${0}
-	}
-# GTest:add fixture
-snippet gtefix "GTest:add fixture"
-	TEST_F(${1:SuiteName}, ${2:TestName}) {
-		${0}
-	}
-# GTest:add parameterized test
-snippet gtepar "GTest:add parameterized test"
-	TEST_P(${1:SuiteName}, ${2:TestName}) {
-		${0}
-	}
-# GTest:instantiate parameterized test
-snippet gteparins "GTest:instantiate parameterized test"
-	INSTANTIATE_TEST_SUITE_P(${1:InstantiationName}, ${2:SuiteName}, ${0});
-
+snippet string
+	std::string
 snippet distance
 	std::distance(${1},${2});
 snippet prev
