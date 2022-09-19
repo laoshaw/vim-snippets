@@ -182,193 +182,130 @@ snippet incva
 	#include <valarray>
 ##
 ## STL Collections
-# std::array
-snippet array
+snippet ar
 	std::array<${1}, ${2}> ${3};
-# std::vector
-snippet vector
-	std::vector<${1}> ${2};
 # std::deque
-snippet deque
-	std::deque<${1}> ${2};
-# std::forward_list
-snippet flist
-	std::forward_list<${1}> ${2};
-# std::list
-snippet list
-	std::list<${1}> ${2};
-# std::set
-snippet set
-	std::set<${1}> ${2};
-# std::map
-snippet map
-	std::map<${1}, ${2}> ${3};
-# std::multiset
-snippet mset
-	std::multiset<${1}> ${2};
-# std::multimap
-snippet mmap
-	std::multimap<${1}, ${2}> ${3};
-# std::unordered_set
-snippet uset
-	std::unordered_set<${1}> ${2};
-# std::unordered_map
-snippet umap
-	std::unordered_map<${1}, ${2}> ${3};
-# std::unordered_multiset
-snippet umset
-	std::unordered_multiset<${1}> ${2};
-# std::unordered_multimap
-snippet ummap
-	std::unordered_multimap<${1}, ${2}> ${3};
-# std::stack
-snippet stack
-	std::stack<${1}> ${2};
-# std::queue
-snippet queue
-	std::queue<${1}> ${2};
-# std::priority_queue
-snippet pqueue
-	std::priority_queue<${1}> ${2};
-##
-## STL smart pointers
-# std::shared_ptr
+snippet de
+	std::deque
+snippet fl
+	std::forward_list
+snippet li
+	std::list
+snippet se
+	std::set
+snippet ma
+	std::map
+snippet ms
+	std::multiset
+snippet mm
+	std::multimap
+snippet us
+	std::unordered_set
+snippet um
+	std::unordered_map
+snippet ums
+	std::unordered_multiset
+snippet umm
+	std::unordered_multimap
+snippet st
+	std::stack
+snippet qu
+	std::queue
+snippet pq
+	std::priority_queue
 snippet sp
 	std::shared_ptr<${1}>
 snippet msp
 	std::make_shared<${1}>(${2});
-snippet amsp
-	auto ${1} = std::make_shared<${2}>(${3});
-# std::unique_ptr
 snippet up
 	std::unique_ptr<${1}>
 snippet mup
 	std::make_unique<${1}>(${2});
 snippet amup
 	auto ${1} = std::make_unique<${2}>(${3});
-##
-## Access Modifiers
-# private
 snippet pri
 	private:
 	  ${1}
-# protected
 snippet pro
 	protected:
 	  ${1}
-# public
 snippet pub
 	public:
 	  ${1}
-# friend
 snippet fr
 	friend:
 	  ${1}
-# mutable
 snippet mu
 	mutable
-##
-snippet comment
-	/**
-	 * ${1: subject}.
-	 *
-	 * ${2: detailed info}.
-	 *
-	 * ${3: @param @return lines}.
-	 */
-## Class
-# class
 snippet cl
 	class ${1} {
 	  ${2}
 	};
-# namespace
 snippet ns
-	namespace ${1:`vim_snippets#Filename('', 'my')`} {
+	namespace ${1} {
 		${0}
-	} /* namespace $1 */
+	}
 snippet ans
 	namespace {
 		${0}
 	}
-##
-# std::
-## Input/Output
-# std::cout
 snippet cout
 	std::cout << ${1} << '\n';
 snippet coutn
 	std::cout << '\n';
 snippet endl
 	std::endl;
-snippet thread
+snippet th
 	std::thread ${1:th};
-snippet threadf
-	std::thread(${1:F,args});
-snippet mutex
+snippet mu
 	std::mutex ${1:m};
-snippet lockg
+snippet lg
 	std::lock_guard<std::mutex> lock(${1:mraii});
-snippet ulock
+snippet ul
 	std::unique_lock<std::mutex> lock(${1:mraii});
-snippet atomic
+snippet at
 	std::atomic<int> ${1:count};
-##
-## Casts
-# static
 snippet sca
-	static_cast<${1:unsigned}>(${2});
+	static_cast<${1}>(${2});
 # dynamic
 snippet dca
-	dynamic_cast<${1:unsigned}>(${2});
+	dynamic_cast<${1}>(${2});
 # reinterpret
-#	reinterpret_cast<${1:unsigned}>(${2})${3}
+#	reinterpret_cast<${1}>(${2})${3}
 snippet rca
-	reinterpret_cast<${1:unsigned}>(${2});
-# const
+	reinterpret_cast<${1}>(${2});
 snippet cca
-	const_cast<${1:unsigned}>(${2});
+	const_cast<${1}>(${2});
 snippet aca
-	std::any_cast<${1:type}>(${2})
-## Iteration
-# for integer
+	std::any_cast<${1}>(${2})
 snippet fori
-	for (int i = 0; i < ${1:count}; ++i) {
+	for (int i = 0; i < ${1}; ++i) {
 		${2}
 	}
-# for size_t
 snippet fors
 	for (size_t i = 0; i < ${1:count}; ++i) {
 		${2}
 	}
-# foreach
 snippet fore
-	for (const auto& i : ${2}) {
-		${3}
+	for (const auto& i : ${1}) {
+		${2}
 	}
-# iterator
 snippet forit
-	for (auto& it = ${1:container}.begin(); it != $1.end(); ++it) {
-		${2:std::cout << *it << '\n';}
+	for (auto& it = ${1}.begin(); it != $1.end(); ++it) {
+		${2}
 	}
-# begin-end similar to ranges
 snippet beg
-	${1}.begin(),$1.end(),${2}
-##
-## Lambdas
-# lamda (one line)
+	${1}.begin(),${1}.end(),${2}
 snippet ld
 	[${1}](${2}){${3}}
-# lambda (multi-line)
 snippet lld
 	[${1}](${2}){
 		${3}
 	};
-# snippets exception
 snippet try
 	try {
-
-	}catch(${1}) {
+		${1}
+	}catch(${2}) {
 
 	}
 # auto function
@@ -377,8 +314,6 @@ snippet af auto function
 	{
 		${0}
 	};
-snippet string
-	std::string
 snippet distance
 	std::distance(${1},${2});
 snippet prev
