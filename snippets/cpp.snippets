@@ -65,27 +65,23 @@ snippet incboost
 	#include <boost/${1:boost}.hpp>
 snippet cpp
 	#include <iostream>
+	#include <fstream>
 	#include <algorithm>
 	#include <functional>
 	#include <utility>
-	#include <memory>
 	#include <limits>
 	#include <numeric>
 	#include <random>
 	#include <chrono>
+	#include <memory>
 	#include <cassert>
 	#include <ranges>
-	#include <fstream>
 	#include <vector>
 	#include <string>
 
-	namespace s = std;
 	namespace r = std::ranges;
 	namespace v = std::views;
 	namespace c = std::chrono;
-
-	using std::cout;
-	using std::cin;
 
 	using namespace std::literals;
 
