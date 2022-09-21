@@ -596,7 +596,8 @@ snippet rand2
 	std::random_device rd;
 	std::mt19937 g(rd());
 snippet time1
-	const auto t1 = c::high_resolution_clock::now();
-	const auto t2 = c::high_resolution_clock::now();
-	const c::duration<double, std::milli> ms = t2 - t1;
+	c::duration<double, std::milli> ms;
+	auto t1 = c::high_resolution_clock::now();
+	auto t2 = c::high_resolution_clock::now();
+	ms = t2 - t1;
 	std::cout << ms.count() << " ms\n";
