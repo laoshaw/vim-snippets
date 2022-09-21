@@ -73,6 +73,7 @@ snippet cpp
 	#include <numeric>
 	#include <random>
 	#include <chrono>
+	#include <thread>
 	#include <memory>
 	#include <cassert>
 	#include <ranges>
@@ -566,3 +567,11 @@ snippet rand1
 snippet rand2
 	std::random_device rd;
 	std::mt19937 g(rd());
+snippet time1
+	namespace c = std::chrono;
+	using namespace std::literals;
+	const auto t1 = c::high_resolution_clock::now();
+	std::this_thread::sleep_for(2s);
+	const auto t2 = c::high_resolution_clock::now();
+	const c::duration<double, std::milli> ms = t2 - t1;
+	std::cout << ms.count() << " ms\n";
