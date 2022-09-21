@@ -568,8 +568,6 @@ snippet rand2
 	std::random_device rd;
 	std::mt19937 g(rd());
 snippet time1
-	namespace c = std::chrono;
-	using namespace std::literals;
 	const auto t1 = c::high_resolution_clock::now();
 	const auto t2 = c::high_resolution_clock::now();
 	const c::duration<double, std::milli> ms = t2 - t1;
