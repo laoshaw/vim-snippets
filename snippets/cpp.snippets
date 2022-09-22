@@ -43,6 +43,8 @@ snippet b
 	begin()
 snippet e
 	end()
+snippet m
+	std::move(${1})
 snippet sb
 	std::begin()
 snippet se
@@ -410,8 +412,6 @@ snippet minmax_element
 	auto [min,max] = std::minmax_element(${1}.begin,$1.end(),${2});
 snippet mismatch
 	auto [val1,val2] = std::mismatch(${1}.begin(),$1.end(),${2}.begin(),$2.end());
-snippet cmove
-	std::move(${1});
 snippet move
 	std::move(${1}.begin(),$1.end(),${2}.begin());
 snippet move_backward
