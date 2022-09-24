@@ -327,7 +327,7 @@ snippet fore
 		${2}
 	}
 snippet forit
-	for (auto& it = ${1}.begin(); it != $1.end(); ++it) {
+	for (const auto& it = ${1}.begin(); it != ${1}.end(); ++it) {
 		${2}
 	}
 snippet beg
