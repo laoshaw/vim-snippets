@@ -74,21 +74,21 @@ snippet any
 snippet incboost
 	#include <boost/${1:boost}.hpp>
 snippet cpp
-	#include <iostream>
-	#include <fstream>
 	#include <algorithm>
+	#include <cassert>
+	#include <chrono>
+	#include <fstream>
 	#include <functional>
-	#include <utility>
+	#include <iostream>
 	#include <limits>
+	#include <memory>
 	#include <numeric>
 	#include <random>
-	#include <chrono>
-	#include <thread>
-	#include <memory>
-	#include <cassert>
 	#include <ranges>
-	#include <vector>
 	#include <string>
+	#include <thread>
+	#include <utility>
+	#include <vector>
 	${2}
 
 	namespace r = std::ranges;
