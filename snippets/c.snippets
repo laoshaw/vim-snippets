@@ -22,12 +22,13 @@ snippet ut
 	${0}
 	#endif
 snippet cp
-	#include <stdio.h>
+	#include <assert.h>
+	#include <limits.h>
+	#include <stdbool.h>
 	#include <stdint.h>
+	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
-	#include <stdbool.h>
-	#include <assert.h>
 
 	int main(int argc, char *argv[]) {
 		${0}
@@ -35,12 +36,13 @@ snippet cp
 		return 0;
 	}
 snippet cpv
-	#include <stdio.h>
+	#include <assert.h>
+	#include <limits.h>
+	#include <stdbool.h>
 	#include <stdint.h>
+	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
-	#include <stdbool.h>
-	#include <assert.h>
 
 	int main(void) {
 		${0}
@@ -48,11 +50,12 @@ snippet cpv
 		return 0;
 	}
 snippet cpx
-	#include <stdio.h>
-	#include <stdint.h>
-	#include <stdlib.h>
-	#include <string.h>
 	#include <assert.h>
+	#include <limits.h>
+	#include <stdbool.h>
+	#include <stdint.h>
+	#include <stdio.h>
+	#include <stdlib.h>
 	#include <pthread.h>
 	#include <syslog.h>
 	#include <unistd.h>
@@ -71,10 +74,12 @@ snippet cpx
 		return 0;
 	}
 snippet cpn
+	#include <assert.h>
+	#include <limits.h>
+	#include <stdbool.h>
+	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
-	#include <string.h>
-	#include <assert.h>
 	#include <pthread.h>
 	#include <syslog.h>
 	#include <unistd.h>
