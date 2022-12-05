@@ -6,6 +6,11 @@ snippet inc1
 	#include "${1}"
 snippet prag
 	#pragma once
+snippet pragma1
+	_Pragma("GCC diagnostic push")
+	_Pragma("GCC diagnostic ignored \"-Wpedantic\"")
+snippet pragma2
+	_Pragma("GCC diagnostic pop")
 snippet per
 	perror("${0}");
 	exit(EXIT_FAILURE);
