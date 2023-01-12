@@ -20,27 +20,22 @@ snippet transition
 # The following snippets create more complex boilerplate code.
 
 snippet vbase
+	<script setup lang="ts">
+	import { ${1:ref} } from "vue"
+	</script>
+
 	<template>
 	  <div>
+
 	  </div>
 	</template>
-
-	<script setup lang="ts">
-	import { $1 } from "vue"
-	</script>
 
 	<style scoped>
 
 	</style>
 
-snippet vimport:c
-	import ${1:Name} from './components/$1.vue';
-
-	export default {
-		components: {
-			$1
-		}
-	}
+snippet vimportc
+	import {${1}} from '@/components/$1.vue';
 
 snippet vactions
 	actions: {
@@ -48,52 +43,6 @@ snippet vactions
 			commit($1, $2);
 		}
 	},
-
-# Add in js animation hooks
-snippet vanim:js:el
-	<transition
-	  @before-enter="beforeEnter"
-	  @enter="enter"
-	  @after-enter="afterEnter"
-	  @enter-cancelled="enterCancelled"
-
-	  @before-Leave="beforeLeave"
-	  @leave="leave"
-	  @after-leave="afterLeave"
-	  @leave-cancelled="leaveCancelled"
-	  :css="false">
-
-	 </transition>
-
-snippet vanim:js:method
-	methods: {
-		beforeEnter(el) {
-			console.log('beforeEnter');
-		},
-		enter(el, done) {
-			console.log('enter');
-			done();
-		},
-		afterEnter(el) {
-			console.log('afterEnter');
-		},
-		enterCancelled(el, done) {
-			console.log('enterCancelled');
-		},
-		beforeLeave(el) {
-			console.log('beforeLeave');
-		},
-		leave(el, done) {
-			console.log('leave');
-			done();
-		},
-		afterLeave(el) {
-			console.log('afterLeave');
-		},
-		leaveCancelled(el, done) {
-			console.log('leaveCancelled');
-		}
-	}
 
 snippet vcl
 	@click="${1}"
@@ -142,9 +91,6 @@ snippet vgetters
 			return state.$1;
 		}
 	},
-
-snippet vimportc
-	import ${1:New} from './components/$1.vue';
 
 snippet vkeep
 	<keep-alive>
@@ -209,11 +155,6 @@ snippet vtemplate
 	  $1
 	</template>
 
-snippet vstyle
-	<style scoped>
-	  $1
-	</style>
-
 snippet vp
 	<p>$1</p>
 
@@ -259,3 +200,49 @@ snippet vstyle
 
 snippet vimport
 	import {$1} from 'vue'
+
+# Add in js animation hooks
+snippet vanim:js:el
+	<transition
+	  @before-enter="beforeEnter"
+	  @enter="enter"
+	  @after-enter="afterEnter"
+	  @enter-cancelled="enterCancelled"
+
+	  @before-Leave="beforeLeave"
+	  @leave="leave"
+	  @after-leave="afterLeave"
+	  @leave-cancelled="leaveCancelled"
+	  :css="false">
+
+	 </transition>
+
+snippet vanim:js:method
+	methods: {
+		beforeEnter(el) {
+			console.log('beforeEnter');
+		},
+		enter(el, done) {
+			console.log('enter');
+			done();
+		},
+		afterEnter(el) {
+			console.log('afterEnter');
+		},
+		enterCancelled(el, done) {
+			console.log('enterCancelled');
+		},
+		beforeLeave(el) {
+			console.log('beforeLeave');
+		},
+		leave(el, done) {
+			console.log('leave');
+			done();
+		},
+		afterLeave(el) {
+			console.log('afterLeave');
+		},
+		leaveCancelled(el, done) {
+			console.log('leaveCancelled');
+		}
+	}
