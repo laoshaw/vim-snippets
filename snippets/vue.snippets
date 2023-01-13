@@ -35,7 +35,7 @@ snippet vbase
 	</style>
 
 snippet vimportc
-	import {${1}} from '@/components/$1.vue';
+	import {${1}} from "@/components/$1.vue";
 
 snippet vactions
 	actions: {
@@ -102,7 +102,7 @@ snippet vkeep
 snippet vmixin
 	const ${1:mixinName} = {
 		mounted() {
-			console.log('hello from mixin!')
+			console.log("hello from mixin!")
 		},
 	}
 	const ${2:Component} = Vue.extend({
@@ -128,16 +128,16 @@ snippet vprops
 	},
 
 snippet vstore
-	import {defineStore} from 'pinia';
+	import {defineStore} from "pinia";
 
 # vue-i18n snippets https://github.com/kazupon/vue-i18n
 
 snippet trans
-	$t('$1')
+	$t("$1")
 
 # Translation with parameter
 snippet transc
-	$t('$1', { $2: $3 })
+	$t("$1", { $2: $3 })
 
 snippet vform
 	<form @submit.prevent=${1} >
@@ -199,7 +199,7 @@ snippet vstyle
 	</style>
 
 snippet vimport
-	import {$1} from 'vue'
+	import {$1} from "vue"
 
 # Add in js animation hooks
 snippet vanim:js:el
@@ -220,29 +220,29 @@ snippet vanim:js:el
 snippet vanim:js:method
 	methods: {
 		beforeEnter(el) {
-			console.log('beforeEnter');
+			console.log("beforeEnter");
 		},
 		enter(el, done) {
-			console.log('enter');
+			console.log("enter");
 			done();
 		},
 		afterEnter(el) {
-			console.log('afterEnter');
+			console.log("afterEnter");
 		},
 		enterCancelled(el, done) {
-			console.log('enterCancelled');
+			console.log("enterCancelled");
 		},
 		beforeLeave(el) {
-			console.log('beforeLeave');
+			console.log("beforeLeave");
 		},
 		leave(el, done) {
-			console.log('leave');
+			console.log("leave");
 			done();
 		},
 		afterLeave(el) {
-			console.log('afterLeave');
+			console.log("afterLeave");
 		},
 		leaveCancelled(el, done) {
-			console.log('leaveCancelled');
+			console.log("leaveCancelled");
 		}
 	}
