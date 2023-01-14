@@ -121,9 +121,9 @@ snippet vprops:d
 	},
 
 snippet vprops
-	${1}: {
-		type: ${2}
-	},
+    const props = defineProps ({
+	    ${1}: Object
+	})
 
 snippet vstore
 	import {defineStore} from "pinia";
