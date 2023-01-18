@@ -17,3 +17,66 @@ snippet simport
 
 snippet sinput
 	<input bind:value={$0} placeholder="placeholder">
+
+snippet sget "define a svelte GET endpoint"
+	export async function get() {
+		${1}
+	}
+
+snippet spost "define a svelte POST endpoint"
+	export async function post() {
+		${1}
+	}
+
+snippet sif "create an if statement"
+	{#if ${1:condition}}
+		${2}
+	{/if}
+
+snippet sife "create an if statement with else"
+	{#if ${1:condition}}
+		${2}
+	{:else}
+		${3}
+	{/if}
+
+snippet seach "create an each statement"
+	{#each ${1:list} as ${2:item}}
+		${3}
+	{/each}
+
+snippet sawait "create an await statement"
+	{#await ${1:promise}}
+		${3}
+	{:then ${2:result}}
+		${4}
+	{/await}
+
+snippet breakpoints "add media queries"
+	@media screen and (min-width: 480px) {
+		${1}
+	}
+	@media screen and (min-width: 768px) {
+	}
+	@media screen and (min-width: 1024px) {
+	}
+
+snippet smedia "add a media query"
+	@media screen and (min-width: ${1:480}px) {
+		${2}
+	}
+
+snippet sstyle "add a style tag"
+	<style>
+		${1}
+	</style>
+
+snippet script "add a script tag"
+	<script>
+		${1}
+	</script>
+
+snippet scriptm "add a script with module context tag"
+	<script context="module">
+		${1}
+	</script>
