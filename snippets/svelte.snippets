@@ -1,1 +1,19 @@
 extends html, javascript, css
+
+snippet sbase
+	<script lang="ts">
+		$0
+	</script>
+
+	<style>
+	</style>
+
+snippet sbtn
+	<button on:click={$0}>
+	</button>
+
+snippet simport
+	import { $0 } from 'svelte';
+
+snippet sinput
+	<input bind:value={$0} placeholder="placeholder">
