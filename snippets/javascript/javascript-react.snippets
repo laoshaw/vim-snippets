@@ -63,7 +63,7 @@ snippet pt propTypes
 
 snippet sdp static defaultProps
 	static defaultProps = {
-		${1}: ${2}	
+		${1}: ${2}
 	};
 
 snippet dp defaultProps
@@ -88,7 +88,7 @@ snippet sst
 		${1}: ${2}
 	});
 
-snippet tst 
+snippet tst
 	this.state.${1};
 
 # Component
@@ -188,3 +188,10 @@ snippet rdh ReactDOM.hydrate
 
 snippet rdcp ReactDOM.createPortal
 	ReactDOM.createPortal(${1:child}, ${2:container});
+
+snippet sfc
+	const ${1} = () => {
+	    return (${2});
+	}
+
+	export default ${3:$1};
