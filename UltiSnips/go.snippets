@@ -58,7 +58,7 @@ case$0
 endsnippet
 
 # functions
-snippet /^xmain/ "Main function" r
+snippet /^main/ "Main function" r
 func main() {
 	${0:${VISUAL}}
 }
@@ -108,7 +108,7 @@ endsnippet
 # vim:ft=snippets:
 
 # error handling
-snippet xerr "Basic error handling" b
+snippet err "Basic error handling" b
 if err != nil {
 	log.${1:Fatal}(err)
 }
