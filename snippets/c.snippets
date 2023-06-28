@@ -132,6 +132,26 @@ snippet main
 
 		return 0;
 	}
+snippet cpk
+	#include <linux/module.h>
+	#include <linux/kernel.h>
+	#include <linux/init.h>
+	#include <linux/timer.h>
+	// fs.h cdev.h device.h interrupt.h delay.h uaccess.h kthread.h spinlock.h
+	// mutex.h semaphore.h
+
+	MODULE_LICENSE("GPL");
+	MODULE_AUTHOR("Fosiao");
+
+	static int __init mod_init(void) {
+		return 0;
+	}
+
+	static void __exit mod_exit(void) {
+	}
+
+	module_init(mod_init);
+	module_exit(mod_exit);
 snippet maina
 	int main(int argc, char *argv[]) {
 		${1}
