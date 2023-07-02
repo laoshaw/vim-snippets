@@ -28,25 +28,22 @@ snippet ut
 	#endif
 snippet gnu
 	#define _GNU_SOURCE
-snippet cpa
+snippet cp
 	#define _GNU_SOURCE
 	#include <assert.h>
 	#include <errno.h>
-	#include <limits.h>
-	#include <stdalign.h>
-	#include <stdbool.h>
 	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
-	#include <stdnoreturn.h>
 	#include <string.h>
+	#include <unistd.h>
 
 	int main(int argc, char *argv[]) {
 		${0}
 
 		return 0;
 	}
-snippet cp
+snippet cpa
 	#define _GNU_SOURCE
 	#include <assert.h>
 	#include <errno.h>
@@ -126,12 +123,6 @@ snippet cpn
 
 		return 0;
 	}
-snippet main
-	int main(void) {
-		${1}
-
-		return 0;
-	}
 snippet cpk
 	#include <linux/module.h>
 	#include <linux/kernel.h>
@@ -152,6 +143,12 @@ snippet cpk
 
 	module_init(mod_init);
 	module_exit(mod_exit);
+snippet main
+	int main(void) {
+		${1}
+
+		return 0;
+	}
 snippet maina
 	int main(int argc, char *argv[]) {
 		${1}
