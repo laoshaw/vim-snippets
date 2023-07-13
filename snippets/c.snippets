@@ -34,11 +34,12 @@ snippet cp
 	#endif
 	#include <assert.h>
 	#include <errno.h>
-	#include <pthread.h>
+	#include <err.h>
 	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
+	#include <pthread.h>
 	#include <unistd.h>
 
 	int main(void) {
@@ -52,15 +53,16 @@ snippet cpa
 	#endif
 	#include <assert.h>
 	#include <errno.h>
+	#include <err.h>
 	#include <limits.h>
-	#include <pthread.h>
-	#include <stdalign.h>
 	#include <stdbool.h>
 	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
-	#include <stdnoreturn.h>
 	#include <string.h>
+	#include <stdalign.h>
+	#include <stdnoreturn.h>
+	#include <pthread.h>
 
 	int main(int argc, char *argv[]) {
 		${0}
@@ -73,24 +75,25 @@ snippet cpx
 	#endif
 	#include <assert.h>
 	#include <errno.h>
+	#include <err.h>
 	#include <limits.h>
-	#include <pthread.h>
-	#include <stdalign.h>
 	#include <stdbool.h>
 	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
+	#include <stdalign.h>
 	#include <stdnoreturn.h>
 	#include <string.h>
-	#include <syslog.h>
-	#include <unistd.h>
 	#include <sys/types.h>
 	#include <sys/stat.h>
-	#include <sys/mman.h>
 	#include <fcntl.h>
 	#include <signal.h>
-	#include <mqueue.h>
 	#include <semaphore.h>
+	#include <mqueue.h>
+	#include <sys/mman.h>
+	#include <pthread.h>
+	#include <unistd.h>
+	#include <syslog.h>
 
 	int main(int argc, char *argv[]) {
 		${0}
@@ -104,26 +107,27 @@ snippet cpn
 	#include <arpa/inet.h>
 	#include <assert.h>
 	#include <errno.h>
-	#include <fcntl.h>
-	#include <netdb.h>
-	#include <netinet/in.h>
+	#include <err.h>
 	#include <limits.h>
-	#include <mqueue.h>
-	#include <pthread.h>
-	#include <semaphore.h>
 	#include <signal.h>
-	#include <stdalign.h>
 	#include <stdbool.h>
 	#include <stdint.h>
 	#include <stdio.h>
 	#include <stdlib.h>
-	#include <stdnoreturn.h>
 	#include <string.h>
+	#include <stdalign.h>
+	#include <stdnoreturn.h>
 	#include <syslog.h>
-	#include <sys/mman.h>
-	#include <sys/socket.h>
 	#include <sys/stat.h>
 	#include <sys/types.h>
+	#include <mqueue.h>
+	#include <semaphore.h>
+	#include <sys/mman.h>
+	#include <fcntl.h>
+	#include <sys/socket.h>
+	#include <netinet/in.h>
+	#include <netdb.h>
+	#include <pthread.h>
 	#include <unistd.h>
 
 	int main(int argc, char *argv[]) {
@@ -412,11 +416,12 @@ snippet prf
 snippet prx
 	printf("${1:} = %${2}\n", $1);
 snippet warn
-	warn("${1:%s}"$0);
+	warn("%s:%d", __FILE__, __LINE__);
 snippet warnx
 	warnx("${1:%s}"$0);
+# err(EXIT_FAILURE,"\033[1;31m" %s:%d" "\033[0m", __FILE__, __LINE__);
 snippet err
-	err(${1:1}, "${2:%s}"$0);
+	err(EXIT_FAILURE, "%s:%d", __FILE__, __LINE__);
 snippet errx
 	errx(${1:1}, "${2:%s}"$0);
 # getopt
