@@ -30,6 +30,12 @@ snippet gnu
 	#define _GNU_SOURCE
 snippet clean
 	__attribute((cleanup(${0})))
+snippet ctor
+	__attribute((constructor))
+snippet dtor
+	__attribute((destructor))
+snippet pack
+	__attribute__((packed))
 snippet incx
 	#include "xcommon.h"
 snippet cp
