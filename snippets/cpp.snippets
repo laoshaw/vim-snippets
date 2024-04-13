@@ -244,57 +244,40 @@ snippet incva
 	#include <valarray>
 ##
 ## STL Collections
-# std::array
-snippet array
+snippet ar
 	std::array<${1}, ${2}> ${3};
 # std::vector
 snippet vector
 	std::vector<${1}> ${2};
 # std::deque
-snippet deque
-	std::deque<${1}> ${2};
-# std::forward_list
-snippet flist
-	std::forward_list<${1}> ${2};
-# std::list
-snippet list
-	std::list<${1}> ${2};
-# std::set
+snippet de
+	std::deque
+snippet fl
+	std::forward_list
+snippet li
+	std::list
 snippet set
-	std::set<${1}> ${2};
-# std::map
-snippet map
-	std::map<${1}, ${2}> ${3};
-# std::multiset
-snippet mset
-	std::multiset<${1}> ${2};
-# std::multimap
-snippet mmap
-	std::multimap<${1}, ${2}> ${3};
-# std::unordered_set
-snippet uset
-	std::unordered_set<${1}> ${2};
-# std::unordered_map
-snippet umap
-	std::unordered_map<${1}, ${2}> ${3};
-# std::unordered_multiset
-snippet umset
-	std::unordered_multiset<${1}> ${2};
-# std::unordered_multimap
-snippet ummap
-	std::unordered_multimap<${1}, ${2}> ${3};
-# std::stack
-snippet stack
-	std::stack<${1}> ${2};
-# std::queue
-snippet queue
-	std::queue<${1}> ${2};
-# std::priority_queue
-snippet pqueue
-	std::priority_queue<${1}> ${2};
-##
-## STL smart pointers
-# std::shared_ptr
+	std::set
+snippet ma
+	std::map
+snippet ms
+	std::multiset
+snippet mm
+	std::multimap
+snippet us
+	std::unordered_set
+snippet um
+	std::unordered_map
+snippet ums
+	std::unordered_multiset
+snippet umm
+	std::unordered_multimap
+snippet stk
+	std::stack
+snippet qu
+	std::queue
+snippet pq
+	std::priority_queue
 snippet sp
 	std::shared_ptr<${1}>
 snippet msp

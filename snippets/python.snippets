@@ -192,11 +192,13 @@ snippet tryef Try/Except/Else/Finally
 		${5}
 	finally:
 		${0}
-
-# if __name__ == '__main__':
-snippet ifmain
+snippet main
 	if __name__ == '__main__':
-		${0:main()}
+		${0}
+snippet pytest
+	if __name__ == '__main__':
+	    import pytest
+		pytest.main([__file__])
 # __magic__
 snippet _
 	__${1:init}__
@@ -205,6 +207,8 @@ snippet _
 snippet br
 	breakpoint()
 # python debugger (pdb)
+snippet brk
+	breakpoint()
 snippet pdb
 	__import__('pdb').set_trace()
 # bpython debugger (bpdb)

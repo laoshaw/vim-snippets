@@ -10,7 +10,7 @@ def printf_expand_args(snip):
 	This will look how many placeholders printf has and adds the separated commas
 	at the end.
 	"""
-	
+
 	# now add so many "," as much as the amount of placeholders
 	amount_placeholders = snip.tabstops[1].current_text.count("%")
 
@@ -19,14 +19,14 @@ def printf_expand_args(snip):
 	# Add the amount of tabstops
 	for placeholder_index in range(3, amount_placeholders + 3):
 		output += f", ${placeholder_index}"
-	
+
 	# convert them into tabstops
 	snip.expand_anon(output)
 
 endglobal
 
 # ==============
-# Snippets 
+# Snippets
 # ==============
 priority -50
 
@@ -185,19 +185,3 @@ ${1}($2){
 endsnippet
 # vim:ft=snippets:
 
-snippet mu "minunit" b
-MU_TEST(test_$1) {
-    mu_assert($2,"${3:assert failed at __func__, __FILE__:__LINE__}");
-}
-endsnippet
-
-snippet mus "minunit suite" b
-MU_TEST_SUITE(${1:test_suite}) {
-    MU_RUN_TEST(test_$2);
-}
-endsnippet
-
-snippet mur "run minunit" b
-MU_RUN_SUITE(${1:test_suite});
-MU_REPORT();
-endsnippet

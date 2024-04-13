@@ -47,11 +47,11 @@ snippet inf "full interface "
 		${2}
 	}
 snippet if "if condition"
-	if $1 {
+	if ${1:/* condition */} {
 		${2:${VISUAL}}
 	}
 snippet ife "if else condition"
-	if $1 {
+	if ${1:/* condition */} {
 		${2:${VISUAL}}
 	} else {
 		${0}
@@ -125,8 +125,7 @@ snippet pn "panic"
 snippet pf "fmt.Printf()"
 	fmt.Printf("%${1:s}\n", ${2:var})
 snippet pl "fmt.Println()"
-	fmt.Println("${1:s}")
-
+	fmt.Println(${1})
 snippet rn "range"
 	range ${0}
 snippet rt "return"

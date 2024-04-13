@@ -195,19 +195,9 @@ snippet par \paragraph
 	\\paragraph{${1:paragraph name}}%
 	\\label{par:${2:$1}}
 	${0}
-# Paragraph*
-snippet par* \paragraph*
-	\\paragraph*{${1:paragraph name}}%
-	\\label{par:${2:$1}}
-	${0}
 # Sub Paragraph
 snippet subp \subparagraph
 	\\subparagraph{${1:subparagraph name}}%
-	\\label{subp:${2:$1}}
-	${0}
-# Sub Paragraph*
-snippet subp* \subparagraph*
-	\\subparagraph*{${1:subparagraph name}}%
 	\\label{subp:${2:$1}}
 	${0}
 snippet ni \noindent
@@ -436,9 +426,11 @@ snippet ddot ddot
 # Vector
 snippet vec vector
 	\\vec{{$1}} {$0}
+
 # Bar
 snippet bar bar
 	\\bar{{$1}} {$0}
+
 # Cross product
 snippet \x cross product
 	\\times {$0}
