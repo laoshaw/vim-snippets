@@ -524,6 +524,17 @@ snippet fre
 snippet .
 	[${1}]
 
+snippet mu
+	MU_TEST(test_$1) {
+		mu_assert($2,"${3:assert failed at __func__, __FILE__:__LINE__}");
+	}
+snippet mus
+	MU_TEST_SUITE(${1:test_suite}) {
+		MU_RUN_TEST(test_$2);
+	}
+snippet mur
+	MU_RUN_SUITE(${1:test_suite});
+	MU_REPORT();
 snippet asm
 	__asm__ __volatile__(
 	"${0}\n\t"

@@ -1,5 +1,13 @@
 extends c
 
+## Main
+# main()
+snippet mainn
+	int main()
+	{
+		${0}
+		return 0;
+	}
 ##
 ## Preprocessor
 # #include <...>
@@ -238,6 +246,9 @@ snippet incva
 ## STL Collections
 snippet ar
 	std::array<${1}, ${2}> ${3};
+# std::vector
+snippet vector
+	std::vector<${1}> ${2};
 # std::deque
 snippet de
 	std::deque
