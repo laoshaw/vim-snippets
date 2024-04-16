@@ -1,24 +1,12 @@
 extends html, javascript, css
 
 snippet vue "Default template"
-<template>
-  $0
-</template>
-
-<script>
-export default {
-  props: {
-  },
-
-  data () {
-    return {
-    }
-  },
-
-  methods: {
-  }
-}
+<script setup type="ts">
+  import { ref } from 'vue';
 </script>
+
+<template>
+</template>
 
 <style scoped>
 </style>
